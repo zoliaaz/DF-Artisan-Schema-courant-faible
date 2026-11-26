@@ -1,0 +1,102 @@
+LICENCE D'UTILISATION DE DF ARTISAN
+Version 1.2 du 25 novembre 2026
+
+Copyright (c) 2026 Jérôme Guillon
+
+DF artisan (« Devis Facture artisan », anciennement BatiDevis) est un logiciel de devis et de factures
+pour les artisans du bâtiment (ci-après « le Logiciel »).
+Son auteur, Jérôme Guillon (ci-après « l'Auteur »), le met à disposition gratuitement aux conditions
+ci-dessous. Utiliser, copier, modifier ou diffuser le Logiciel vaut acceptation de cette licence.
+
+
+ARTICLE 1 - CE QUI EST PERMIS, GRATUITEMENT
+
+1.1 Utilisation. Toute personne, particulier ou entreprise (artisan, société, association...), peut
+    installer et utiliser le Logiciel, y compris pour son activité professionnelle : faire ses
+    propres devis, ses propres factures et gérer sa propre entreprise.
+
+1.2 Modification. Chacun peut modifier le Logiciel et l'adapter à ses besoins.
+
+1.3 Diffusion. Chacun peut donner des copies du Logiciel, modifié ou non, à condition que ce soit
+    gratuitement et en respectant les articles 2 et 3.
+
+
+ARTICLE 2 - CE QUI EST INTERDIT : TOUTE EXPLOITATION COMMERCIALE DU LOGICIEL LUI-MÊME
+
+Le Logiciel ne doit jamais être une source de revenus en tant que tel. Sont notamment interdits,
+pour le Logiciel d'origine comme pour toute version modifiée ou tout logiciel qui en reprend une
+partie :
+
+  a) le vendre, ou vendre une copie, une licence ou un droit de l'utiliser ;
+  b) le louer, le proposer par abonnement, ou le faire payer sous quelque forme que ce soit ;
+  c) le vendre ou le louer en ligne : le proposer à d'autres comme service hébergé ou service
+     internet (« logiciel en tant que service », SaaS, hébergement, infogérance), contre
+     paiement, abonnement, publicité ou données, même si l'accès au Logiciel est présenté comme
+     gratuit et que seul le service autour est payant ;
+  d) l'inclure dans un produit, un logiciel, une offre ou un service payant ;
+  e) le diffuser sous un autre nom en s'en présentant comme l'auteur ;
+  f) plus généralement, vendre un produit ou un service (hébergement, installation, assistance
+     ou maintenance comprises) dont la valeur vient, entièrement ou pour l'essentiel, du
+     Logiciel ou de ses fonctions.
+
+L'Auteur reste seul à pouvoir accorder une autre autorisation, par écrit. Utiliser le Logiciel
+pour faire ses propres devis et factures et se faire payer ses travaux n'est pas une exploitation
+commerciale du Logiciel : c'est permis (article 1.1). Une entreprise peut aussi installer le
+Logiciel sur son propre serveur pour ses seuls besoins et ceux de son personnel.
+
+
+ARTICLE 3 - CITER LE PROJET D'ORIGINE
+
+3.1 Toute copie diffusée doit être accompagnée de la présente licence, sans modification.
+
+3.2 Toute version modifiée, et tout logiciel qui reprend tout ou partie du Logiciel, doit :
+  a) indiquer clairement, dans sa documentation et dans son écran « À propos » (ou un
+     équivalent visible par l'utilisateur), qu'il est issu de DF artisan, créé par Jérôme Guillon,
+     ainsi que l'adresse de publication du projet d'origine si celui-ci en a une ;
+  b) indiquer qu'il a été modifié, et par qui ;
+  c) être diffusé sous cette même licence, avec les mêmes interdictions.
+
+3.3 Les mentions de l'Auteur présentes dans le Logiciel (licence, « À propos », documentation)
+    ne doivent pas être retirées.
+
+3.4 Toute version modifiée publiée en ligne (téléchargement, dépôt de code, page web, version
+    utilisable dans le navigateur...) doit avoir son code source complet disponible gratuitement,
+    au même endroit ou par un lien clairement indiqué, sous une forme lisible (non obscurcie).
+
+
+ARTICLE 4 - ÉLÉMENTS D'AUTRES AUTEURS
+
+Le Logiciel contient des éléments d'autres auteurs, qui restent soumis à leur propre licence :
+  - la bibliothèque pypdf (dossier app/vendor/pypdf), sous licence BSD : voir son fichier
+    LICENCE-pypdf, qui doit être conservé ;
+  - les bibliothèques openpyxl et et_xmlfile (dossier app/vendor), sous licence MIT, et
+    typing_extensions (licence PSF) : leurs
+    fichiers de licence, dans ce dossier, doivent être conservés ;
+  - les symboles électriques NF C 15-100 du module Électricien (web/js/plan.js), redessinés par
+    CalculPro (https://calculpro.fr/outils/electricite) : utilisation libre, revente du lot de
+    symboles en l'état interdite (voir web/symboles/LISEZMOI.txt) ;
+  - PDF.js (Mozilla, dossier web/vendor/pdfjs), sous licence Apache 2.0 : voir son fichier
+    LICENSE.txt, qui doit être conservé (sert à importer un plan PDF en fond de plan) ;
+  - le profil de couleurs app/sRGB.icc, créé par Graeme W. Gill et placé dans le domaine public.
+La présente licence ne s'applique pas à ces éléments.
+
+ARTICLE 5 - AUCUNE GARANTIE
+
+Le Logiciel est fourni tel quel, sans garantie d'aucune sorte. Chaque utilisateur reste seul
+responsable de ses devis et de ses factures : leurs montants, leur TVA, leurs mentions
+obligatoires, leur conformité à la réglementation (notamment la facturation électronique) et
+leur conservation. Il lui appartient de les vérifier et de faire des sauvegardes de ses données.
+Dans les limites permises par la loi, l'Auteur ne pourra être tenu responsable d'aucun dommage
+lié à l'utilisation du Logiciel ou à l'impossibilité de l'utiliser.
+
+
+ARTICLE 6 - FIN DES DROITS
+
+Celui qui ne respecte pas cette licence perd automatiquement les droits qu'elle lui donne. Les
+personnes qui ont reçu de lui une copie conforme à la licence gardent les leurs.
+
+
+ARTICLE 7 - DROIT APPLICABLE
+
+Cette licence est soumise au droit français. En cas de désaccord, les parties chercheront
+d'abord une solution amiable avant de saisir les tribunaux français compétents.

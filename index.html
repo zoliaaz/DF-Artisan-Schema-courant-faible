@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schémas interphone — DF artisan</title>
+<meta name="description" content="Schémas d'interphone, de contrôle d'accès et de portail : synoptique, multifilaire, câbles normés, alertes. Gratuit, sans installation, hors connexion.">
+<meta name="theme-color" content="#2d4ea2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="256x256" href="icone.png">
+<link rel="apple-touch-icon" href="icone-192.png">
+<link rel="stylesheet" href="style.css?v=0.70.6">
+<style>
+  /* version autonome : seulement les schémas */
+  .barre-gauche #nav .nav-ligne:not(.autonome), #mise-a-jour, #profil, #bouton-reseau, #quitter, #bouton-electricien { display: none !important; }
+  .nav-fichiers { display: flex; flex-direction: column; gap: 4px; margin-top: 10px; }
+  .nav-fichiers button { text-align: left; background: none; border: 0; color: inherit; padding: 6px 10px; border-radius: 6px; cursor: pointer; font: inherit; }
+  .nav-fichiers button:hover { background: rgba(255,255,255,.12); }
+  .apropos-autonome { font-size: 11.5px; opacity: .75; padding: 6px 10px; line-height: 1.35; }
+  body.gauche-repliee .apropos-autonome, body.gauche-repliee .nav-fichiers > :not(#replier-gauche) { display: none; }
+  .nouveautes { background: none; border: 0; color: inherit; padding: 6px 10px; border-radius: 6px; cursor: pointer; font: inherit; text-align: left; width: 100%; }
+  .nouveautes:hover { background: rgba(255,255,255,.12); }
+  .nouveautes.non-vu::after { content: ""; display: inline-block; width: 8px; height: 8px; margin-left: 6px; border-radius: 50%; background: #f59e0b; vertical-align: middle; }
+  body.gauche-repliee .nouveautes { display: none; }
+  .barre-gauche > .pied-gauche { margin-top: auto; padding-bottom: 8px; }
+  .nouveautes-liste h2 { font-size: 16px; } .nouveautes-liste ul { margin: 0 0 .5em; padding-left: 1.2em; }
+  .bandeau-maj { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 950; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; background: #fff7ed; border: 1px solid #f59e0b; color: #7c2d12; padding: 8px 12px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.2); max-width: calc(100vw - 24px); font-size: 14px; }
+  .bandeau-maj.cache { display: none; }
+</style>
+</head>
+<body>
+<aside class="barre-gauche">
+  <div class="marque"><button id="bouton-menu" class="bouton-menu" title="Afficher le menu">☰</button><span class="nom-logiciel">Schémas interphone</span><button id="bouton-electricien" class="bouton-electricien"></button></div>
+  <nav id="nav">
+    <div class="nav-ligne autonome"><button data-section="schemas" class="actif">Mes schémas</button><button class="nav-plus" id="nouveau-schema" title="Nouveau schéma">+</button></div>
+  </nav>
+  <div class="nav-fichiers">
+    <button id="exporter" title="Tous vos schémas, vos modèles d'appareils et vos câbles dans un fichier (sauvegarde, ou pour les ouvrir sur un autre appareil)">💾 Enregistrer mes schémas (fichier)</button>
+    <button id="importer" title="Ouvrir un fichier de schémas (.schemas.json) : les schémas sont ajoutés à ceux déjà là">📂 Ouvrir un fichier de schémas</button>
+    <button id="bouton-plein-ecran" class="nav-reseau" title="Plein écran (F11)"><span class="reseau-icone">⛶</span><span class="reseau-texte">Plein écran</span></button>
+    <button id="installer-appli" title="Installer comme une application (icône sur l'écran d'accueil, plein écran, hors connexion)">📲 Installer l'application</button>
+    <button id="replier-gauche" class="replier-gauche" title="Masquer cette colonne pour gagner de la place (le menu reste accessible par ☰)">« Réduire</button>
+  </div>
+  <div id="mise-a-jour"></div>
+  <div id="etat-enregistrement" class="etat"></div>
+  <div id="profil"></div>
+  <div class="apropos-autonome">Vos schémas restent dans ce navigateur, sur cet appareil : enregistrez-les de temps en temps en fichier.<br>Module issu de <b>DF artisan</b>, logiciel de devis et factures spécialisé dans le bâtiment, <b>en cours d'écriture (alpha)</b> : il peut comporter des erreurs.<a id="lien-retours" href="#" target="_blank" rel="noopener" style="color:inherit;display:block;margin:4px 0">Signaler un bug, proposer une idée (GitHub)</a><div style="margin-top:4px">Gratuit, utilisable pour votre activité professionnelle ; le module lui-même ne peut pas être vendu, ni proposé en service en ligne payant (voir LICENCE.txt). Version 0.70.6.</div></div>
+  <button id="bouton-reseau" class="nav-reseau cache"><span class="reseau-icone"></span><span class="reseau-texte"></span></button>
+  <div class="pied-gauche"><button id="nouveautes" class="nouveautes" title="Correctifs, ajouts et modifications des dernières versions">📋 Nouveautés</button><button id="quitter" class="replier-gauche"></button></div>
+</aside>
+<main id="contenu"></main>
+<div id="modale" class="modale cache"><div class="modale-boite" id="modale-boite"></div></div>
+<div id="toast" class="toast cache"></div>
+<script>window.VERSION_SCHEMAS = "0.70.6";</script>
+<script src="sans-serveur.js?v=0.70.6"></script>
+<script src="riche.js?v=0.70.6"></script>
+<script src="js/base.js?v=0.70.6"></script>
+<script src="js/listes.js?v=0.70.6"></script>
+<script src="js/devis.js?v=0.70.6"></script>
+<script src="js/etude_clavier.js?v=0.70.6"></script>
+<script src="js/schemas.js?v=0.70.6"></script>
+<script src="autonome.js?v=0.70.6"></script>
+</body>
+</html>

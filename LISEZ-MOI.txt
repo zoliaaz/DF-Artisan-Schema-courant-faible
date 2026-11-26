@@ -1,0 +1,24 @@
+Schémas interphone / portail — version autonome du module de DF artisan
+=======================================================================
+
+Une page web, sans serveur ni installation : les schémas sont gardés dans le navigateur de l'appareil (enregistrez-
+les de temps en temps en fichier : « 💾 Enregistrer mes schémas »). Utilisable hors connexion une fois ouverte en
+ligne, installable comme une application sur une tablette.
+
+FABRIQUER
+- Commande :  python outils/fabriquer_schemas_web.py   ->  dist/schemas-interphone/  et un .zip
+- Le dossier se met en ligne tel quel (GitHub Pages, ou n'importe quel hébergement de pages web). Ouvert par un
+  double-clic (sans serveur), il marche aussi, mais sans le hors connexion ni l'installation.
+- Le code du module est celui de DF artisan (web/js/schemas.js…), recopié à chaque fabrication : les seuls
+  fichiers propres à cette version sont dans schemas-web/.
+
+FICHIERS DE SCHÉMAS
+- Le fichier « .schemas.json » (💾 Enregistrer mes schémas) contient les schémas, vos modèles d'appareils et vos
+  câbles : pour les garder, ou les ouvrir sur un autre appareil (📂 Ouvrir un fichier de schémas : un schéma déjà
+  là est remplacé par celui du fichier, après confirmation, les autres sont ajoutés).
+- Le même fichier s'ouvre dans DF artisan (Schémas > 📂 Importer…), et DF artisan en fait (💾 Exporter…, ou ☰ >
+  Exporter ce schéma) qui s'ouvrent ici : un schéma est reconnu d'un côté à l'autre, il n'est pas dupliqué.
+
+Licence : voir LICENCE.txt (gratuit, utilisable pour votre activité professionnelle ; le module lui-même ne peut pas
+être vendu ni proposé en service en ligne payant ; une version modifiée publiée en ligne doit avoir son code source
+disponible).
